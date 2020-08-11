@@ -1,12 +1,16 @@
 from getpass import getpass
 import smtplib, ssl
 from email.mime.text import MIMEText
+import os
 
 def send_email(subject, body,
          sender='devfunni@gmail.com',
          receiver='devfunni@gmail.com'):
 
-    password = getpass() 
+    try:
+        password = os.environ['MAIL_PASSWORD']
+    except: 
+        password = getpass() 
     port = 465 # for SSL
     smtp_server = "smtp.gmail.com"
 
