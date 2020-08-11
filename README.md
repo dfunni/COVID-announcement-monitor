@@ -1,4 +1,4 @@
-#Palomar Observatory Monitor
+# Palomar Observatory Monitor
 This project monitors the Palomar Mountain Observatory website for updated
 announcements. At the time of making the observatory was closed to the public
 due to COVID-19. I wanted to be alerted as soon as the website was updated
