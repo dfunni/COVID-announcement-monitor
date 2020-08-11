@@ -1,0 +1,11 @@
+version: "3.7"
+services:
+    app:
+        build: app
+        restart: always
+        environment:
+            - MAIL_PASSWORD=/run/secrets/mail_password
+
+secrets:
+    mail_password:
+        file: ~/mailpass.txt
