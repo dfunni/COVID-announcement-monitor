@@ -2,7 +2,9 @@ version: "3.7"
 services:
     app:
         build: app
-        restart: always
+        restart: on-failure 
+        volumes:
+            - .app/src:/code
         secrets:
             - mail_password
         environment:
@@ -10,4 +12,4 @@ services:
 
 secrets:
     mail_password:
-        file: ~/mailpass.txt
+        file: ./mailpass.txt
