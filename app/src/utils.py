@@ -7,10 +7,7 @@ def send_email(subject, body,
          sender='devfunni@gmail.com',
          receiver='devfunni@gmail.com'):
 
-    try:
-        password = os.environ['MAIL_PASSWORD']
-    except: 
-        password = getpass() 
+    password = os.environ.get('MAIL_PASSWORD')
     port = 465 # for SSL
     smtp_server = "smtp.gmail.com"
 
