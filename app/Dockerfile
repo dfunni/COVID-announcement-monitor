@@ -2,7 +2,7 @@
 FROM python:3.7
 
 # set the working directory in the contianer
-WORKDIR /code
+WORKDIR app/code
 
 # copy the dependencies to the working directory
 COPY requirements.txt .
