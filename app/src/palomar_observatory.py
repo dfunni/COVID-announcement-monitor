@@ -9,8 +9,8 @@ def check_announcements(announcements, text):
 
     # case where announcments are removed
     if len(announcements) == 0:
-        msg = """Alert: there are currently no announcements on the
-        Palomar Objevatory website"""
+        msg.append("""Alert: there are currently no announcements on the
+        Palomar Objevatory website""")
         updated = True
 
     # case where there are announcements 
@@ -21,7 +21,7 @@ def check_announcements(announcements, text):
             msg.append(ann)
             updated = True
         else:
-            msg = "Still Closed"
+            msg.append("Still Closed")
 
 
     return '\n\n'.join(msg), updated
