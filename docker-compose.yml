@@ -3,13 +3,6 @@ services:
     app:
         build: app
         restart: on-failure 
-        volumes:
-            - .app/src:/code
-        secrets:
-            - MAIL_PASSWORD 
-        environment:
-            - MAIL_PASSWORD
+        env_file:
+            - ../mailpass.env
 
-secrets:
-    MAIL_PASSWORD:
-        external: true
