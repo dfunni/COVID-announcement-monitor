@@ -1,0 +1,2 @@
+* * * * * /home/pi/COVID-announcement-monitor/start.sh > /tmp/palomar.log 2>&1
+

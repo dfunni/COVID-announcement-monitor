@@ -1,0 +1,2 @@
+0 10,18 * * * /home/pi/COVID-announcement-monitor/start.sh > /tmp/announce.log 2>&1
+
