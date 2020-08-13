@@ -26,13 +26,14 @@ def check_announcements(announcements, text):
 
     return '\n\n'.join(msg), updated
 
-
-req = requests.get('https://www.astro.caltech.edu/palomar/homepage.html')
+link = 'https://www.astro.caltech.edu/palomar/homepage.html'
+req = requests.get(link)
 page = BeautifulSoup(req.text, 'html.parser')
 announcements = page.select('.announcement')
 closed = "Palomar Observatory is closed to the public"
 subject = ' '.join(str.split(closed)[:2])
 body, updated = check_announcements(announcements, closed)
+body += f'\n{link}'
 
 if updated:
     subject += " Update"
