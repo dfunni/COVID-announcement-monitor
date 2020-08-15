@@ -5,4 +5,9 @@ services:
         restart: on-failure 
         env_file:
             - ../mailpass.env
+    app2:
+        build: app2
+        restart: on-failure 
+        env_file:
+            - ../mailpass.env
 
