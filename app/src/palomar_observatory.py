@@ -30,14 +30,15 @@ link = 'https://www.astro.caltech.edu/palomar/homepage.html'
 req = requests.get(link)
 page = BeautifulSoup(req.text, 'html.parser')
 announcements = page.select('.announcement')
-closed = "Palomar Observatory is closed to the public"
+closed = "closed to the public"
 subject = ' '.join(str.split(closed)[:2])
 body, updated = check_announcements(announcements, closed)
 body += f'\n{link}'
-
 if updated:
     subject += " Update"
     utils.send_email(subject, body, receiver='dfunni@gmail.com')
 else:
     utils.send_email(subject, body)
+
+print(updated, body)
 

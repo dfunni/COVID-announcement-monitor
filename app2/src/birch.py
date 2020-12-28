@@ -16,7 +16,7 @@ def check_text(website_txt, closed_text):
         par = para.text
         if closed_text in par:
             closed_msgs.append(par)
-    if len(closed_msgs) > 0:
+    if len(closed_msgs) == 0:
         msg = "Still Closed"
     else:
         updated = True
@@ -28,8 +28,8 @@ link = 'https://aquarium.ucsd.edu/birch-aquarium-update-covid-19'
 req = requests.get(link)
 page = BeautifulSoup(req.text, 'html.parser')
 website_txt = page.select('p')
-closed_text = "closed to the public"
-subject = ' '.join(str.split(closed_text)[:2])
+closed_text = "open"
+subject = "Birch Aquarium Closed" 
 body, updated = check_text(website_txt, closed_text)
 body += f'\n{link}'
 if updated:
