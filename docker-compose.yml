@@ -1,12 +1,14 @@
 version: "3.7"
 services:
-    app:
-        build: app
+
+    app1_aquarium:
+        build: app1_aquarium 
         restart: on-failure 
         env_file:
             - ../mailpass.env
-    app2:
-        build: app2
+
+    app2_observatory:
+        build: app2_observatory 
         restart: on-failure 
         env_file:
             - ../mailpass.env
